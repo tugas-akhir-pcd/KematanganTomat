@@ -161,13 +161,13 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 Img = imread(fullfile(pathname,filename));
 handles.I = Img;
 guidata(hObject,handles)
-axes(handles.axes1)
+axes(handles.axes2)
 imshow(Img)
 title(filename);
-
 
 % --- Executes on button press in pushbutton4.
 function pushbutton4_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
