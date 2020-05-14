@@ -33,7 +33,7 @@ varargout{1} = handles.output;
 % --- Executes on button press in pushbutton1.
 function pushbutton1_Callback(hObject, eventdata, handles)
 
-image_folder = 'D:\Tubes PCD\Training\mature';
+image_folder = '.\Training\mature';
 filenames = dir(fullfile(image_folder, '*.jpg'));
 total_images = numel(filenames);
 Z1=[];
@@ -110,7 +110,7 @@ Z=[MeanR MeanG MeanB MeanH MeanS MeanI VarRed VarGreen VarBlue VarH VarS VarI Ra
 Z1=[Z1;Z];
 end
 
-image_folder = 'D:\Tubes PCD\Training\half-mature';
+image_folder = '.\Training\half-mature';
 filenames = dir(fullfile(image_folder, '*.jpg'));
 total_images = numel(filenames);
 
@@ -187,7 +187,7 @@ Z=[MeanR MeanG MeanB MeanH MeanS MeanI VarRed VarGreen VarBlue VarH VarS VarI Ra
 Z1=[Z1;Z];
 end
 
-image_folder = 'D:\Tubes PCD\Training\immature';
+image_folder = '.\Training\immature';
 filenames = dir(fullfile(image_folder, '*.jpg'));
 total_images = numel(filenames);
 
@@ -356,13 +356,13 @@ Z=[MeanR MeanG MeanB MeanH MeanS MeanI VarRed VarGreen VarBlue VarH VarS VarI Ra
 hasil1=knnclassify(Z,training,group);
 
 if hasil1==1
-    x='MATURE';
+    x='MATANG';
 elseif hasil1==2
-    x='HALF-MATURE';
+    x='SETENGAH MATANG';
 elseif hasil1==3
-    x='IMMATURE';
+    x='BELUM MATANG';
 end
-set(handles.edit1,'string',x);
+set(handles.edit2,'string',x);
 
 
 function uitable2_CellEditCallback(hObject, eventdata, handles)
